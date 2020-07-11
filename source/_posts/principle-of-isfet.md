@@ -139,7 +139,7 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
 - 時漂效應
 
     ![Vgs versus time](https://user-images.githubusercontent.com/67454551/87220076-9247a880-c393-11ea-9950-c007651e652b.png)
-# Dual Gate ISFET
+## Dual Gate ISFET
 
 下列資訊來源為 2015 IEEE 
 [High performance dual-gate ISFET with non-ideal effect reduction schemes in a SOI-CMOS bioelectrical SoC](https://ieeexplore.ieee.org/document/7409792 "Title").
