@@ -1,11 +1,11 @@
 ---
-title: First post
+title: Tool
 date: 2020-06-29 16:47:33
-tags: []
+tags: tool
 categories: ["Hexo"]
 ---
 
-The stuff you'll see in the front page.
+https://www.latexlive.com
 
 <!-- more -->
 

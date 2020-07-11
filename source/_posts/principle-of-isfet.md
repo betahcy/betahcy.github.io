@@ -5,7 +5,7 @@ date: 2020-07-11 15:40:48
 tags: device
 categories:
 ---
-# MOSFET 基本原理
+## MOSFET 基本原理
 
 - 空乏型MOSFET
 1. P型基底鑲入兩塊N型區，分別為Source以及Drain以及Drain
@@ -14,7 +14,7 @@ categories:
 4. 閘極(Gate)是用金屬極片蓋在氧化層上面做成
 <!-- more -->
 
-# ISFET基本原理
+## ISFET基本原理
 
 - 由Bergveld Piet於1970年提出
 
@@ -138,7 +138,8 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
 
 - 時漂效應
 
-    ![Vgs versus time](https://user-images.githubusercontent.com/67454551/87220076-9247a880-c393-11ea-9950-c007651e652b.png)
+![Vgs versus time](https://user-images.githubusercontent.com/67454551/87220076-9247a880-c393-11ea-9950-c007651e652b.png)
+
 ## Dual Gate ISFET
 
 下列資訊來源為 2015 IEEE 
