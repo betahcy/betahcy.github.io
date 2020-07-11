@@ -8,7 +8,8 @@ categories: ["Hexo"]
 The stuff you'll see in the front page.
 
 <!-- more -->
-{% pdf https://github.com/betahcy/betahcy.github.io/files/4906390/proceedings-02-01297.pdf %}
+
+![test](https://user-images.githubusercontent.com/67454551/87218549-7a1d5c80-c386-11ea-815b-72d588f26b22.png)
 
 More stuff in the post.
 
