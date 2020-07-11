@@ -1,12 +1,10 @@
 ---
 title: principle-of-isfet
 comments: false
-date: 2020-07-11 12:43:14
-tags:device
+date: 2020-07-11 15:40:48
+tags: device
 categories:
 ---
-
-
 # MOSFET 基本原理
 
 - 空乏型MOSFET
