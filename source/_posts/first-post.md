@@ -11,4 +11,4 @@ The stuff you'll see in the front page.
 
 More stuff in the post.
 
-💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩
+$$\iint_{a}^{b}$$

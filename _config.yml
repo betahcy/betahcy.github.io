@@ -232,7 +232,7 @@ theme_config:
   scheme: Gemini  # other options: Muse, Mist, Pisces
 
   # Dark Mode
-  darkmode: true
+  darkmode: false
 
   # ---------------------------------------------------------------
   # Menu Settings
