@@ -12,6 +12,7 @@ categories:
 2. 在這兩極之間以參雜成N型的通道區相連接
 3. N型通道區的上層覆蓋了一層氧化層(二氧化矽(SiO2))
 4. 閘極(Gate)是用金屬極片蓋在氧化層上面做成
+<!-- more -->
 
 # ISFET基本原理
 
@@ -120,4 +121,3 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
 - 時漂效應
 
     ![TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%209.png](TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%209.png)
-<!-- more -->
