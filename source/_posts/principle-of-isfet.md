@@ -16,7 +16,7 @@ categories:
 
 # ISFET基本原理
 
-- 最早由Bergveld Piet於1970年提出
+- 由Bergveld Piet於1970年提出
 
     他發現將一般MOSFET 的金屬閘極去除後，再將其浸入溶液時，元件之通道電流會隨H+濃度不同而變化，稱其為離子場效電晶體(ISFET)。
 
@@ -34,8 +34,14 @@ categories:
 氫離子感測場效應電晶體的基本工作原理。
 
 - pH-ISFET基本公式
-
-    ![TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled.png](TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled.png)
+$$
+ \begin{array}{l}
+\mathrm{I}_{\mathrm{DS}}=\mathrm{g}_{\mathrm{m}}\left[2\left(\mathrm{V}_{\mathrm{GS}}-\mathrm{V}_{\mathrm{T}}\right) \mathrm{V}_{\mathrm{DS}}-\mathrm{V}_{\mathrm{DS}}^{2}\right] \quad \text { Q Caption } \\
+\mathrm{V}_{\mathrm{T}}(\mathrm{ISFET})=\mathrm{V}_{\mathrm{T}}(\mathrm{MOSFEI})-\frac{\Phi_{\mathrm{M}}}{\mathrm{q}}+\mathrm{E}_{\mathrm{Ref}}+\chi^{\mathrm{Sol}}-\psi_{0} \\
+\Psi_{\mathrm{o}}=\mathrm{E}_{\mathrm{o}}+\frac{2.303 \mathrm{RT}}{\mathrm{F}} \log \mathrm{a}_{\mathrm{H}^{+}}=\mathrm{E}_{\mathrm{o}}-\frac{2.303 \mathrm{RT}}{\mathrm{F}} \mathrm{pH} \\
+\mathrm{I}_{\mathrm{DS}}=\mathrm{g}_{\mathrm{m}}\left[2\left(\mathrm{V}_{\mathrm{GS}}-\frac{2.303 \mathrm{RT}}{\mathrm{F}} \mathrm{pH}-\mathrm{V}_{\mathrm{T}}^{*}\right) \mathrm{V}_{\mathrm{DS}}-\mathrm{V}_{\mathrm{DS}}^{2}\right]
+\end{array}
+$$
 
 - 吸附鍵結模型(Site-binding model)
     - Yates提出用於解釋pH-ISFET響應原理
@@ -45,8 +51,12 @@ categories:
             - Al3N4
             - Si3N4
     - 在感測膜浸在電解質溶液時，界面處會發生以下化學反應
-
-    ![TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%201.png](TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%201.png)
+$$
+ \begin{array}{l}
+M-O H \Leftrightarrow M O^{-}+H^{+} \\
+M-O H+H^{+} \Leftrightarrow M O H_{2}^{+}
+\end{array}
+$$
 
 - 總體來說就是藉由感測膜感應出一個表面電位，並藉由導線將表面電位傳至後方MOSFET的閘極端，改變起始電壓(Threshold Voltage)
 - pH值愈高，VT愈大，I-V曲線將往右移動
