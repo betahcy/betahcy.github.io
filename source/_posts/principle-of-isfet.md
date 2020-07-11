@@ -73,7 +73,8 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
 
 如下圖所示，ISFET得感測度會隨時間變化
 
-![TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%203.png](TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%203.png)
+![drifting](https://user-images.githubusercontent.com/67454551/87219949-37618180-c392-11ea-98e0-43de1b2ee0d4.png)
+
 
 ### 量測系統
 
