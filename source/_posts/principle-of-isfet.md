@@ -67,7 +67,7 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
 
 如下圖所示，很多論文提到的感測度(Sensitivity)指的是Vth隨著pH的變化量
 
-![Untitled](https://user-images.githubusercontent.com/67454551/87219852-63c8ce00-c391-11ea-9159-a25ec532d689.png)
+![Vth versus pH](https://user-images.githubusercontent.com/67454551/87219852-63c8ce00-c391-11ea-9159-a25ec532d689.png)
 
 ### 響應時間
 
