@@ -36,7 +36,7 @@ categories:
 - pH-ISFET基本公式
 $$
  \begin{array}{l}
-\mathrm{I}_{\mathrm{DS}}=\mathrm{g}_{\mathrm{m}}\left[2\left(\mathrm{V}_{\mathrm{GS}}-\mathrm{V}_{\mathrm{T}}\right) \mathrm{V}_{\mathrm{DS}}-\mathrm{V}_{\mathrm{DS}}^{2}\right] \quad \text { Q Caption } \\
+\mathrm{I}_{\mathrm{DS}}=\mathrm{g}_{\mathrm{m}}\left[2\left(\mathrm{V}_{\mathrm{GS}}-\mathrm{V}_{\mathrm{T}}\right) \mathrm{V}_{\mathrm{DS}}-\mathrm{V}_{\mathrm{DS}}^{2}\right] \quad  \\
 \mathrm{V}_{\mathrm{T}}(\mathrm{ISFET})=\mathrm{V}_{\mathrm{T}}(\mathrm{MOSFEI})-\frac{\Phi_{\mathrm{M}}}{\mathrm{q}}+\mathrm{E}_{\mathrm{Ref}}+\chi^{\mathrm{Sol}}-\psi_{0} \\
 \Psi_{\mathrm{o}}=\mathrm{E}_{\mathrm{o}}+\frac{2.303 \mathrm{RT}}{\mathrm{F}} \log \mathrm{a}_{\mathrm{H}^{+}}=\mathrm{E}_{\mathrm{o}}-\frac{2.303 \mathrm{RT}}{\mathrm{F}} \mathrm{pH} \\
 \mathrm{I}_{\mathrm{DS}}=\mathrm{g}_{\mathrm{m}}\left[2\left(\mathrm{V}_{\mathrm{GS}}-\frac{2.303 \mathrm{RT}}{\mathrm{F}} \mathrm{pH}-\mathrm{V}_{\mathrm{T}}^{*}\right) \mathrm{V}_{\mathrm{DS}}-\mathrm{V}_{\mathrm{DS}}^{2}\right]
@@ -85,13 +85,15 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
 - I-V
     - IDS-VGS
 
-    ![TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%204.png](TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%204.png)
+ ![Ids versus Vgs](https://user-images.githubusercontent.com/67454551/87220003-f4ec7480-c392-11ea-9875-fd0c7dfcf454.png)
+
 
     下面曲線與X軸交點為Vth由圖可以得知當pH質越大，元件所需的Threshold Voltage就越大，因此VGS也更高
 
 - IDS-VDS
 
-    ![TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%205.png](TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%205.png)
+ ![Ids versus Vds](https://user-images.githubusercontent.com/67454551/87220019-1b121480-c393-11ea-8ac1-cbdebe90ac1f.png)
+
 
 ### ISFET的缺點
 
@@ -110,7 +112,8 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
         - 參考電極之溫度效
         應
 
-        ![TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%206.png](TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%206.png)
+    ![drfting by temperature](https://user-images.githubusercontent.com/67454551/87220045-409f1e00-c393-11ea-9089-11260b0a9932.png)
+
 
         - 待測液之溫度效應
         - 臨界電壓之溫度效應
@@ -123,12 +126,15 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
 
 - 穩定性與重現性
 
-    ![TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%207.png](TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%207.png)
+    ![stability](https://user-images.githubusercontent.com/67454551/87220072-86f47d00-c393-11ea-933c-aeceb9266b7a.png)
+
+
+
 
 - 響應時間 (R)
 
-    ![TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%208.png](TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%208.png)
+    ![response time](https://user-images.githubusercontent.com/67454551/87220075-8d82f480-c393-11ea-9879-4464ce47690d.png)
 
 - 時漂效應
 
-    ![TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%209.png](TSMC%20ISFET%20characteristics%2000b0b66a7a824eae9578a660c318437e/Untitled%209.png)
+    ![Vgs versus time](https://user-images.githubusercontent.com/67454551/87220076-9247a880-c393-11ea-9950-c007651e652b.png)
