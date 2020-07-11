@@ -120,6 +120,7 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
         - 表面電位之溫度效應
     - 照光響應
         - 
+        
 - 酸鹼讀出電路與量測系統
 
 ### 如何判定感測器的優劣?
@@ -138,3 +139,16 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
 - 時漂效應
 
     ![Vgs versus time](https://user-images.githubusercontent.com/67454551/87220076-9247a880-c393-11ea-9950-c007651e652b.png)
+# Dual Gate ISFET
+
+下列資訊來源為 2015 IEEE 
+[High performance dual-gate ISFET with non-ideal effect reduction schemes in a SOI-CMOS bioelectrical SoC](https://ieeexplore.ieee.org/document/7409792 "Title").
+This device possesses two gates:
+
+- Fluidic gate (FG): Biased via a reference electrode in solution.
+
+- Standard polysilicon gate (PG) : Standard gate of MOSFET.
+
+
+> DGFET can be approximately modeled as two FETs connected in parallel.
+

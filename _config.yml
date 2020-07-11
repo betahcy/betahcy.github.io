@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://username.github.io
+url: https://betahcy.github.io
 root: /
 permalink: :year/:month/:title/
 permalink_defaults:
@@ -305,7 +305,7 @@ theme_config:
   social:
     GitHub: https://github.com/betahcy || fab fa-github
     #GitLab: https://gitlab.com/userneme || fab fa-gitlab
-    E-Mail: mailto:userneme@gmail.com || fa fa-envelope
+    E-Mail: mailto:betahcy@gmail.com || fa fa-envelope
     #Weibo: https://weibo.com/yourname || fab fa-weibo
     #Google: https://plus.google.com/yourname || fab fa-google
     #Twitter: https://twitter.com/userneme || fab fa-twitter
@@ -409,7 +409,7 @@ theme_config:
   # Easily browse and edit blog source code online.
   post_edit:
     enable: true
-    url: https://github.com/username/username.github.io/blob/source/source/ # Link for view source
+    url: https://github.com/betahcy/betahcy.github.io/blob/source/source/ # Link for view source
     #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
   # Show previous post and next post in post footer if exists
@@ -492,7 +492,7 @@ theme_config:
   # `Follow me on GitHub` banner in the top-right corner.
   github_banner:
     enable: true
-    permalink: https://github.com/username
+    permalink: https://github.com/betahcy
     title: Follow me on GitHub
 
   # ---------------------------------------------------------------
