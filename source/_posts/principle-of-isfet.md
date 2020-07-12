@@ -8,7 +8,7 @@ categories:
 ## MOSFET 基本原理
 
 - 空乏型MOSFET
-1. P型基底鑲入兩塊N型區，分別為Source以及Drain以及Drain
+1. P型基底鑲入兩塊N型區，分別為Source以及Drain
 2. 在這兩極之間以參雜成N型的通道區相連接
 3. N型通道區的上層覆蓋了一層氧化層(二氧化矽(SiO2))
 4. 閘極(Gate)是用金屬極片蓋在氧化層上面做成
