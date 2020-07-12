@@ -289,7 +289,7 @@ theme_config:
   # Sidebar Avatar
   avatar:
     # Replace the default image and set the url here.
-    url: ""
+    url: "https://user-images.githubusercontent.com/67454551/87241307-693b1c80-c454-11ea-892d-1b922b02ac7a.png"
     # If true, the avatar will be dispalyed in circle.
     rounded: true
     # If true, the avatar will be rotated with the cursor.
