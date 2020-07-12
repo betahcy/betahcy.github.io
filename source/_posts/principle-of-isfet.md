@@ -1,5 +1,5 @@
 ---
-title: principle-of-isfet
+title: principle-isfet
 comments: false
 date: 2020-07-11 15:40:48
 tags: device

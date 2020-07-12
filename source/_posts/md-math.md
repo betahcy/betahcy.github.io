@@ -5,6 +5,8 @@ tags: ["latex", "mathjax", "katex"]
 categories: ["Hexo"]
 ---
 
+https://www.latexlive.com
+
 You'll need to swap out the default Markdown renderer (`hexo-renderer-marked`) for Latex rendering without workaround escape charactors such as `\`, `_`.
 
 <!-- more -->
