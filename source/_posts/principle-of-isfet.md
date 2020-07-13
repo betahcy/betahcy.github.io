@@ -152,4 +152,19 @@ This device possesses two gates:
 
 
 > DGFET can be approximately modeled as two FETs connected in parallel.
+### Operation mode
 
+- single-gate (SG) operation
+
+Only fluidic gate transistor is turned on to generate pH dependent
+current with a constant drain-to-source voltage **(VDS = 0.2 V).**
+
+- PG mode
+
+Optimal Vpg=0.5V (less drifting) when Vfg is set grounded
+
+### Sensitivity
+
+- According to the **VTH difference derived from the IDS-VFG
+data**, this device has a near-Nernst pH sensitivity of 53.3
+mV/pH with linearity of R^2 = 0.994.
