@@ -37,7 +37,7 @@ categories:
 $$
  \begin{array}{l}
 \mathrm{I}_{\mathrm{DS}}=\mathrm{g}_{\mathrm{m}}\left[2\left(\mathrm{V}_{\mathrm{GS}}-\mathrm{V}_{\mathrm{T}}\right) \mathrm{V}_{\mathrm{DS}}-\mathrm{V}_{\mathrm{DS}}^{2}\right] \quad  \\
-\mathrm{V}_{\mathrm{T}}(\mathrm{ISFET})=\mathrm{V}_{\mathrm{T}}(\mathrm{MOSFEI})-\frac{\Phi_{\mathrm{M}}}{\mathrm{q}}+\mathrm{E}_{\mathrm{Ref}}+\chi^{\mathrm{Sol}}-\psi_{0} \\
+\mathrm{V}_{\mathrm{T}}(\mathrm{ISFET})=\mathrm{V}_{\mathrm{T}}(\mathrm{MOSFET})-\frac{\Phi_{\mathrm{M}}}{\mathrm{q}}+\mathrm{E}_{\mathrm{Ref}}+\chi^{\mathrm{Sol}}-\psi_{0} \\
 \Psi_{\mathrm{o}}=\mathrm{E}_{\mathrm{o}}+\frac{2.303 \mathrm{RT}}{\mathrm{F}} \log \mathrm{a}_{\mathrm{H}^{+}}=\mathrm{E}_{\mathrm{o}}-\frac{2.303 \mathrm{RT}}{\mathrm{F}} \mathrm{pH} \\
 \mathrm{I}_{\mathrm{DS}}=\mathrm{g}_{\mathrm{m}}\left[2\left(\mathrm{V}_{\mathrm{GS}}-\frac{2.303 \mathrm{RT}}{\mathrm{F}} \mathrm{pH}-\mathrm{V}_{\mathrm{T}}^{*}\right) \mathrm{V}_{\mathrm{DS}}-\mathrm{V}_{\mathrm{DS}}^{2}\right]
 \end{array}
@@ -130,8 +130,6 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
     ![stability](https://user-images.githubusercontent.com/67454551/87220072-86f47d00-c393-11ea-933c-aeceb9266b7a.png)
 
 
-
-
 - 響應時間 (R)
 
     ![response time](https://user-images.githubusercontent.com/67454551/87220075-8d82f480-c393-11ea-9879-4464ce47690d.png)
@@ -142,13 +140,13 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
 
 ## Dual Gate ISFET
 
-下列資訊來源為 2015 IEEE 
+ **2015 IEEE**
 [High performance dual-gate ISFET with non-ideal effect reduction schemes in a SOI-CMOS bioelectrical SoC](https://ieeexplore.ieee.org/document/7409792 "Title").
 This device possesses two gates:
 
-- Fluidic gate (FG): Biased via a reference electrode in solution.
+- **Fluidic gate (FG)**: Biased via a reference electrode in solution.
 
-- Standard polysilicon gate (PG) : Standard gate of MOSFET.
+- **Standard polysilicon gate (PG)** : Standard gate of MOSFET.
 
 
 > DGFET can be approximately modeled as two FETs connected in parallel.
@@ -156,15 +154,49 @@ This device possesses two gates:
 
 - single-gate (SG) operation
 
-Only fluidic gate transistor is turned on to generate pH dependent
-current with a constant drain-to-source voltage **(VDS = 0.2 V).**
+    - Only fluidic gate transistor is turned on to generate pH dependent
+current with a **constant drain-to-source voltage** **(VDS = 0.2 V).**
+
+    - Vpg is set **0V** and Vfg is sweeping through **0 to 2V**
+
+        <img width="382" alt="Vfg sweeping" src="https://user-images.githubusercontent.com/67454551/87668247-5e5af180-c79e-11ea-99c9-d3462adf2663.png">
+
 
 - PG mode
+    - Vpg is set **0.5 V** and Vpg is sweeping through **-0.2 to 1.5 V**
 
-Optimal Vpg=0.5V (less drifting) when Vfg is set grounded
+    - Optimal Vpg=0.5V (less drifting) when Vfg is set grounded.
+
+    <img width="378" alt="Vfg sweeping" src="https://user-images.githubusercontent.com/67454551/87669011-ca8a2500-c79f-11ea-9493-4c244fece83d.png">
 
 ### Sensitivity
 
 - According to the **VTH difference derived from the IDS-VFG
 data**, this device has a near-Nernst pH sensitivity of 53.3
 mV/pH with linearity of R^2 = 0.994.
+## Shortage of ISFET
+
+- Time drift
+- Hysteresis effect
+- Severe flicker noise [(1)](https://www.sciencedirect.com/science/article/pii/S0925400509007059)
+
+## Different Structure of ISFET
+
+
+### Extended-gate
+
+- Half of **transconductance efficiency (gm/ID) due to capacitive division**
+- threshold voltage (VTH) mismatch due to trapped charges on the sensing membrane
+
+
+
+### Sensitivity
+
+- According to the **VTH difference derived from the IDS-VFG
+data**, this device has a near-Nernst pH sensitivity of 53.3
+mV/pH with linearity of R^2 = 0.994.
+
+
+### Advantage
+
+-
