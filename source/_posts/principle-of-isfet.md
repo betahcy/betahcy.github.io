@@ -126,18 +126,18 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
         
 - 酸鹼讀出電路與量測系統
 
-### 如何判定感測器的優劣?
+### Performance
 
-- 穩定性與重現性
+- Stability and reproducibility
 
     ![stability](https://user-images.githubusercontent.com/67454551/87220072-86f47d00-c393-11ea-933c-aeceb9266b7a.png)
 
 
-- 響應時間 (R)
+- Response time (R)
 
     ![response time](https://user-images.githubusercontent.com/67454551/87220075-8d82f480-c393-11ea-9879-4464ce47690d.png)
 
-- 時漂效應
+- Drifting effect
 
     ![Vgs versus time](https://user-images.githubusercontent.com/67454551/87220076-9247a880-c393-11ea-9950-c007651e652b.png)
 
