@@ -67,13 +67,13 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
 
 如下圖所示，很多論文提到的感測度(Sensitivity)指的是Vth隨著pH的變化量
 
-![Vth versus pH](https://user-images.githubusercontent.com/67454551/87219852-63c8ce00-c391-11ea-9159-a25ec532d689.png)
+    ![Vth versus pH](https://user-images.githubusercontent.com/67454551/87219852-63c8ce00-c391-11ea-9159-a25ec532d689.png)
 
 ### 響應時間
 
 如下圖所示，ISFET得感測度會隨時間變化
 
-![drifting](https://user-images.githubusercontent.com/67454551/87219949-37618180-c392-11ea-98e0-43de1b2ee0d4.png)
+    ![drifting](https://user-images.githubusercontent.com/67454551/87219949-37618180-c392-11ea-98e0-43de1b2ee0d4.png)
 
 
 ### 量測系統
@@ -85,14 +85,14 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
 - I-V
     - IDS-VGS
 
- ![Ids versus Vgs](https://user-images.githubusercontent.com/67454551/87220003-f4ec7480-c392-11ea-9875-fd0c7dfcf454.png)
+    ![Ids versus Vgs](https://user-images.githubusercontent.com/67454551/87220003-f4ec7480-c392-11ea-9875-fd0c7dfcf454.png)
 
 
     下面曲線與X軸交點為Vth由圖可以得知當pH質越大，元件所需的Threshold Voltage就越大，因此VGS也更高
 
 - IDS-VDS
 
- ![Ids versus Vds](https://user-images.githubusercontent.com/67454551/87220019-1b121480-c393-11ea-8ac1-cbdebe90ac1f.png)
+    ![Ids versus Vds](https://user-images.githubusercontent.com/67454551/87220019-1b121480-c393-11ea-8ac1-cbdebe90ac1f.png)
 
 
 ### ISFET的缺點
@@ -112,12 +112,15 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
         - 參考電極之溫度效
         應
 
-    ![drfting by temperature](https://user-images.githubusercontent.com/67454551/87220045-409f1e00-c393-11ea-9089-11260b0a9932.png)
+             ![drfting by temperature](https://user-images.githubusercontent.com/67454551/87220045-409f1e00-c393-11ea-9089-11260b0a9932.png)
 
 
         - 待測液之溫度效應
+
         - 臨界電壓之溫度效應
+
         - 表面電位之溫度效應
+
     - 照光響應
         - 
         
@@ -136,7 +139,7 @@ $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|�
 
 - 時漂效應
 
-![Vgs versus time](https://user-images.githubusercontent.com/67454551/87220076-9247a880-c393-11ea-9950-c007651e652b.png)
+    ![Vgs versus time](https://user-images.githubusercontent.com/67454551/87220076-9247a880-c393-11ea-9950-c007651e652b.png)
 
 ## Dual Gate ISFET
 
@@ -166,14 +169,17 @@ current with a **constant drain-to-source voltage** **(VDS = 0.2 V).**
     - Vpg is set **0.5 V** and Vpg is sweeping through **-0.2 to 1.5 V**
 
     - Optimal Vpg=0.5V (less drifting) when Vfg is set grounded.
+    
 
-    <img width="378" alt="Vfg sweeping" src="https://user-images.githubusercontent.com/67454551/87669011-ca8a2500-c79f-11ea-9493-4c244fece83d.png">
+        <img width="378" alt="Vfg sweeping" src="https://user-images.githubusercontent.com/67454551/87669011-ca8a2500-c79f-11ea-9493-4c244fece83d.png">
 
 ### Sensitivity
 
 - According to the **VTH difference derived from the IDS-VFG
-data**, this device has a near-Nernst pH sensitivity of 53.3
-mV/pH with linearity of R^2 = 0.994.
+data**, this device has a near-Nernst pH sensitivity of 53.3 mV/pH with linearity of $$
+R^{2} = 0.994.
+$$
+
 ## Shortage of ISFET
 
 - Time drift
