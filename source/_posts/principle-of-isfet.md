@@ -6,32 +6,25 @@ tags: device
 categories:
 ---
 ## MOSFET 基本原理
-
 - 空乏型MOSFET
 1. P型基底鑲入兩塊N型區，分別為Source以及Drain
 2. 在這兩極之間以參雜成N型的通道區相連接
 3. N型通道區的上層覆蓋了一層氧化層(二氧化矽(SiO2))
 4. 閘極(Gate)是用金屬極片蓋在氧化層上面做成
-<!-- more -->
-
 ## ISFET基本原理
-
-- 由Bergveld Piet於1970年提出
+<!-- more -->
+- 由 Bergveld Piet於1970年提出
 
     他發現將一般MOSFET 的金屬閘極去除後，再將其浸入溶液時，元件之通道電流會隨H+濃度不同而變化，稱其為離子場效電晶體(ISFET)。
-
-- 優勢
+- **優勢**
     - 輸入阻抗高
     - 輸出阻抗低
     - 響應時間快
     - 低價位
     - 適合用於Biosensor
-
 ### 工作原理
+由於pH-ISFET工作時感測膜區域直接浸泡於溶液中。與待測溶液相接觸的感測膜是離子感測元件將化學量轉換成電學量的關鍵。對溶液中離子活度的響應機制是根據吸附鍵結模型(Site-binding model)，電解質與感測膜之介面處會形成界面勢(Surface potential)，該界面勢隨電解質溶液的離子活度而改變，並對ISFET的通道電流起調制作用，進而引起汲源電流的變化，此即為氫離子感測場效應電晶體的基本工作原理。
 
-由於pH-ISFET工作時感測膜區域直接浸泡於溶液中。與待測溶液相接觸的感測膜是離子感測元件將化學量轉換成電學量的關鍵。對溶液中離子活度的響應機制是根據吸附鍵結模型(Site-binding model)，電解質與感測膜之介面處
-會會形成界面勢(Surface potential)，該界面勢隨電解質溶液的離子活度而改變，並對ISFET的通道電流起調制作用，進而引起汲源電流的變化，此即為
-氫離子感測場效應電晶體的基本工作原理。
 
 - pH-ISFET基本公式
 $$
@@ -58,22 +51,20 @@ M-O H+H^{+} \Leftrightarrow M O H_{2}^{+}
 \end{array}
 $$
 
-- 總體來說就是藉由感測膜感應出一個表面電位，並藉由導線將表面電位傳至後方MOSFET的閘極端，改變起始電壓(Threshold Voltage)
+- 總體來說就是藉由感測膜感應出一個表面電位，並藉由導線將表面電位傳至後方MOSFET的閘極端，改變起始電壓(Threshold Voltage,Vth)
 - pH值愈高，VT愈大，I-V曲線將往右移動
 
 $$Sensitivity=\frac{|△ψ0|}{|△pH|}=\frac{|△Vthreshold|}{|△pH|}=\frac{|△Vgs|}{|△pH|}$$
 
 由上述式子可以得知，感測器的表面電位、元件起始電壓、閘極源極之間的電壓(Vgs)皆會酸鹼度改變。
+很多論文提到的感測度(Sensitivity)指的是Vth隨著pH的變化量而改變，如下圖所示，起始電壓(Vth)會隨著會隨著pH值升高而上升，而根據上面的公式，Ids會變小。
 
-如下圖所示，很多論文提到的感測度(Sensitivity)指的是Vth隨著pH的變化量
-
-    ![Vth versus pH](https://user-images.githubusercontent.com/67454551/87219852-63c8ce00-c391-11ea-9159-a25ec532d689.png)
+![Vth versus pH](https://user-images.githubusercontent.com/67454551/87219852-63c8ce00-c391-11ea-9159-a25ec532d689.png)
 
 ### 響應時間
-
 如下圖所示，ISFET得感測度會隨時間變化
 
-    ![drifting](https://user-images.githubusercontent.com/67454551/87219949-37618180-c392-11ea-98e0-43de1b2ee0d4.png)
+![drifting](https://user-images.githubusercontent.com/67454551/87219949-37618180-c392-11ea-98e0-43de1b2ee0d4.png)
 
 
 ### 量測系統
@@ -204,5 +195,4 @@ mV/pH with linearity of R^2 = 0.994.
 
 
 ### Advantage
-
 -
