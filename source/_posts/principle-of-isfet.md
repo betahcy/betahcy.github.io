@@ -5,6 +5,8 @@ date: 2020-07-11 15:40:48
 tags: device
 categories:
 ---
+## 資料來源:
+ 江榮隆 教授 中州技術學院電子工程系 
 ## MOSFET 基本原理
 - 空乏型MOSFET
 1. P型基底鑲入兩塊N型區，分別為Source以及Drain
