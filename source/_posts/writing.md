@@ -6,7 +6,7 @@ tags:
 categories:
 ---
 Lecturer: Miguel Lee, NTU Writing Center
-[toc]
+
 *   [Abstract](##Abstract)
     *   [RP-driven detail](###RP-driven)
     *   [Tense](###Tense)
