@@ -7,25 +7,10 @@ categories:
 ---
 Lecturer: Miguel Lee, NTU Writing Center
 
-*   [Abstract](##Abstract)
-    *   [RP-driven detail](###RP-driven)
-    *   [Tense](###Tense)
-*   [Introduction](##Introduction)
-    *   [Structure](###Structure)
-    *   [Tense](###Tense)
-*   [Method](##Method)
-    *   [Structure](###Structure)
-    *   [Tense](###Tense)
-*   [Result](#Result)
-    *   [Structure](###Structure)
-    *   [Tense](###Tense)
-*   [Discussion](#Discussion)
-    *   [Structure](###Structure)
-    *   [Tense](###Tense)
-*   [Acknowledgement](#acknowledgement)
+
 <!-- more -->
 ## Abstract
-Structure:
+### Structure:
 * Descriptive:
     Purpose/methods/objectiive scope of the work, probably without results.
 * Imformative (Most of journal paper)
