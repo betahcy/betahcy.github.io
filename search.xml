@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>ISE</title>
+    <url>/2020/07/ISE-and-basic-potentiometry/</url>
+    <content><![CDATA[<h2 id="zhang-jie-zhong-dian" id="章節重點"><a class="header-anchor" href="#章節重點"></a>章節重點</h2>
+<p>熟知一些電化學的基礎名詞與其意義，並了解離子選擇電極(ion-selective electrode，ISE）的種類和工作原理。</p>
+<h2 id="ming-ci-jian-jie" id="名詞簡介"><a class="header-anchor" href="#名詞簡介"></a>名詞簡介</h2>
+<ul>
+<li>電化學分析</li>
+</ul>
+<p>電化學分析，指的是透過各種氧化還原相關的反應，透過電位、電流的監控，來進行分析物濃度或其他性質的分析，是目前被廣泛使用的一種化學分析方法。</p>
+<ul>
+<li>能斯特方程式（Nernst equation）</li>
+</ul>
+<p>在熱力學中，連結Gibbs自由能（Gibbs free energy）與反應商Q（reaction quotient）的式子如下：</p>
+<p>Gibbs自由能的物理意義為</p>
+<a id="more"></a>
+<ul>
+<li>電位法</li>
+<li>參考電極</li>
+<li>指示電極</li>
+<li>接面電位（junction potential）</li>
+<li>選擇係數（selectivity coefficient）</li>
+</ul>
+<h2 id="recipe" id="Recipe"><a class="header-anchor" href="#Recipe"></a>Recipe</h2>
+<ul>
+<li>
+<p>鉀離子</p>
+</li>
+<li>
+<p>鈉離子</p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>Electrochemistry</title>
+    <url>/2020/11/electrochemistry/</url>
+    <content><![CDATA[<p>Lecturer: Richie L.C. Chen</p>
+<a id="more"></a>]]></content>
+  </entry>
+  <entry>
+    <title>Tool</title>
+    <url>/2020/06/first-post/</url>
+    <content><![CDATA[<p><a href="https://www.latexlive.com">https://www.latexlive.com</a></p>
+<a id="more"></a>
+<p>More stuff in the post.</p>
+<p style=""><img data-src="https://math.now.sh?from=%5Ciint_%7Ba%7D%5E%7Bb%7D%0A" /></p>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>tool</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MathJax rendering</title>
+    <url>/2020/07/md-math/</url>
+    <content><![CDATA[<p><a href="https://www.latexlive.com">https://www.latexlive.com</a></p>
+<p>You’ll need to swap out the default Markdown renderer (<code>hexo-renderer-marked</code>) for Latex rendering without workaround escape charactors such as <code>\</code>, <code>_</code>.</p>
+<a id="more"></a>
+<h2 id="setup" id="Setup"><a class="header-anchor" href="#Setup"></a>Setup</h2>
+<p>Some of the guide is from <a href="https://theme-next.js.org/docs/third-party-services/math-equations.html">Hexo Next docs</a></p>
+<p>First, uninstall the default Markdown renderer (<code>hexo-renderer-marked</code>)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked</span><br></pre></td></tr></table></figure>
+<h3 id="option-1-code-hexo-renderer-pandoc-code" id="Option-1-hexo-renderer-pandoc"><a class="header-anchor" href="#Option-1-hexo-renderer-pandoc"></a>Option 1: <code>hexo-renderer-pandoc</code></h3>
+<p><code>pandoc</code> need to be installed in your <code>PATH</code>.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked</span><br></pre></td></tr></table></figure>
+<h3 id="option-2-code-hexo-renderer-markdown-it-code" id="Option-2-hexo-renderer-markdown-it"><a class="header-anchor" href="#Option-2-hexo-renderer-markdown-it"></a>Option 2: <code>hexo-renderer-markdown-it</code></h3>
+<p>You could use <code>markdown-it-katex</code> with <code>hexo-renderer-markdown-it</code> as in the <a href="https://theme-next.js.org/docs/third-party-services/math-equations.html">Hexo Next docs</a>.</p>
+<p>However, I recommend another plugin, <code>markdown-it-latex2img</code><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>, which does server-side rendering of math formulae, powered by <a href="https://math.now.sh/">https://math.now.sh/</a></p>
+<h2 id="math-jax-rendering" id="MathJax-rendering"><a class="header-anchor" href="#MathJax-rendering"></a>MathJax rendering</h2>
+<p>See <a href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">MathJax quick reference</a> for syntax.</p>
+<p>The delimiters <code>$</code>, <code>$$</code> follow the pandoc rule.</p>
+<h3 id="inline-formulae" id="Inline-formulae"><a class="header-anchor" href="#Inline-formulae"></a>Inline formulae</h3>
+<p>The left <code>$</code> must be followed by a non white-space character. And the right <code>$</code> must follow  a non white-space character</p>
+<ul>
+<li>Pythagoras theorem: <img data-src="https://math.now.sh?inline=a%5E2%2Bb%5E2%3Dc%5E2" style="display:inline-block;margin: 0;"/></li>
+<li>Sum of arithmetic sequence: <img data-src="https://math.now.sh?inline=S_%7Bn%7D%3Dn%20a_%7B1%7D%2B%5Cfrac%7Bn%28n-1%29%7D%7B2%7D%20d%2C%20n%20%5Cin%20N%5E%7B*%7D" style="display:inline-block;margin: 0;"/></li>
+<li>Fundamental theorem of calculus: <img data-src="https://math.now.sh?inline=%5Cint_%7Ba%7D%5E%7Bb%7D%20f%28x%29%20d%20x%3DF(b)-F(a)%3D%5Cleft.F(x)%5Cright%7C_%7Ba%7D%20%5E%7Bb%7D" style="display:inline-block;margin: 0;"/></li>
+<li>Binomial distribution: <img data-src="https://math.now.sh?inline=P_%7Bn%7D%28k%29%3DC_%7Bn%7D%5E%7Bk%7D%20p%5E%7Bk%7D%20q%5E%7Bn-k%7D%20%5Cquad%20k%3D0%2C1%2C2%20%5Cldots%20%5Cldots%2C%20n" style="display:inline-block;margin: 0;"/></li>
+</ul>
+<h3 id="block-formulae" id="Block-formulae"><a class="header-anchor" href="#Block-formulae"></a>Block formulae</h3>
+<p>Normaldistribution <img data-src="https://math.now.sh?inline=X%20%5Csim%20N%28%5Cmu%2C%5Csigma%5E2%29" style="display:inline-block;margin: 0;"/>:</p>
+<p style=""><img data-src="https://math.now.sh?from=f%28x%29%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%5Csigma%7De%5E%7B-%5Cfrac%7B(x-%5Cmu)%5E2%7D%7B2%5Csigma%5E2%7D%7D%0A" /></p><p>Fibonacci Sequence <img data-src="https://math.now.sh?inline=A_n%3DA_%7Bn-1%7D%2BA_%7Bn-2%7D" style="display:inline-block;margin: 0;"/>, the ratio of two consecutive numbers converges to golden ratio</p>
+<p style=""><img data-src="https://math.now.sh?from=%5Clim_%7Bn%5Cto%20%5Cinfty%7D%5Cfrac%7BA_%7Bn-1%7D%7D%7BA_n%7D%3D%5Cfrac%7B%5Csqrt%7B5%7D-1%7D%7B2%7D.%0A" /></p><p>Factorisation</p>
+<p style=""><img data-src="https://math.now.sh?from=%5Cbegin%7Bsplit%7D%28x%E2%88%921%29(x%E2%88%923)%26%3Dx%5E2%E2%88%924x%2B3%20%5C%5C%20%0A%26%3Dx%5E2%E2%88%924x%2B4%E2%88%921%20%5C%5C%20%0A%26%3D(x%E2%88%922)%5E2%E2%88%921%0A%5Cend%7Bsplit%7D%0A" /></p><p>Dirichlet function</p>
+<p style=""><img data-src="https://math.now.sh?from=D%28x%29%3D%0A%5Cbegin%7Bcases%7D%0A1%2C%26%20x%20%5Cin%20Q%20%5C%5C%0A0%2C%26%20x%20%5Cnotin%20Q%0A%5Cend%7Bcases%7D%0A" /></p><p>Gauss’s law</p>
+<p style=""><img data-src="https://math.now.sh?from=%5Ciiint_%7B%5COmega%7D%5Cleft%28%5Cfrac%7B%5Cpartial%20P%7D%7B%5Cpartial%20x%7D%2B%5Cfrac%7B%5Cpartial%20Q%7D%7B%5Cpartial%20y%7D%2B%5Cfrac%7B%5Cpartial%20R%7D%7B%5Cpartial%20z%7D%5Cright%29%20d%20v%3D%5Ciint_%7B%5CSigma%7D%20P%20d%20y%20d%20z%2BQ%20d%20z%20d%20x%2BR%20d%20x%20d%20y%0A" /></p><p>Vandermonde matrix</p>
+<p style=""><img data-src="https://math.now.sh?from=D_%7Bn-1%7D%3D%5Cleft%7C%5Cbegin%7Barray%7D%7Bcccc%7D%0A1%20%26%201%20%26%20%5Cdots%20%26%201%20%5C%5C%0Ax_%7B2%7D%20%26%20x_%7B3%7D%20%26%20%5Cdots%20%26%20x_%7Bn%7D%20%5C%5C%0A%5Cvdots%20%26%20%5Cvdots%20%26%20%26%20%5Cvdots%20%5C%5C%0Ax_%7B2%7D%5E%7Bn-2%7D%20%26%20x_%7B3%7D%5E%7Bn-2%7D%20%26%20%5Cdots%20%26%20x_%7Bn%7D%5E%7Bn-2%7D%0A%5Cend%7Barray%7D%5Cright%7C%3D%5Cprod_%7B2%20%5Cleq%20j%3Ci%20%5Cleq%20n%7D%5Cleft%28x_%7Bi%7D-x_%7Bj%7D%5Cright%29" /></p><p>System of linear equations</p>
+<p style=""><img data-src="https://math.now.sh?from=%5Cleft%5C%7B%5Cbegin%7Baligned%7D%0Aa_%7B11%7D%20x_%7B1%7D%2Ba_%7B12%7D%20x_%7B2%7D%2B%5Ccdots%2Ba_%7B1%20n%7D%20x_%7Bn%7D%20%26%3Db_%7B1%7D%20%5C%5C%0Aa_%7B21%7D%20x_%7B1%7D%2Ba_%7B22%7D%20x_%7B2%7D%2B%5Ccdots%2Ba_%7B2%20n%7D%20x_%7Bn%7D%20%26%3Db_%7B2%7D%20%5C%5C%0A%5Ccdots%20%5Ccdots%20%5Ccdots%20%5C%5C%0Aa_%7Bm%201%7D%20x_%7B1%7D%2Ba_%7Bm%202%7D%20x_%7B2%7D%2B%5Ccdots%2Ba_%7Bm%20n%7D%20x_%7Bn%7D%20%26%3Db_%7Bm%7D%0A%5Cend%7Baligned%7D%5Cright." /></p><h3 id="physics" id="Physics"><a class="header-anchor" href="#Physics"></a>Physics</h3>
+<ul>
+<li>Newton’s first law: <img data-src="https://math.now.sh?inline=%5Csum%20%5Cvec%7BF%7D_%7Bi%7D%3D%5Cfrac%7B%5Cmathrm%7Bd%7D%20%5Cvec%7Bv%7D%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3D0" style="display:inline-block;margin: 0;"/></li>
+<li>Newton’s second law: <img data-src="https://math.now.sh?inline=%5Cvec%7BF%7D%3D%5Cfrac%7B%5Cmathrm%7Bd%7D%20m%7D%7B%5Cmathrm%7Bd%7D%20t%7D%20%5Cvec%7Bv%7D%2Bm%20%5Cfrac%7B%5Cmathrm%7Bd%7D%20%5Cvec%7Bv%7D%7D%7B%5Cmathrm%7Bd%7D%20t%7D%3D%5Cfrac%7B%5Cmathrm%7Bd%7D%20m%7D%7B%5Cmathrm%7Bd%7D%20t%7D%20%5Cvec%7Bv%7D%2Bm%20%5Cvec%7Ba%7D%3D%5Cfrac%7B%5Cmathrm%7Bd%7D%20m%7D%7B%5Cmathrm%7Bd%7D%20t%7D%20%5Cvec%7Bv%7D%2Bm%20%5Cfrac%7B%5Cmathrm%7Bd%7D%5E%7B2%7D%20%5Cvec%7Br%7D%7D%7B%5Cmathrm%7Bd%7D%20t%5E%7B2%7D%7D" style="display:inline-block;margin: 0;"/></li>
+<li>Newton’s third law: <img data-src="https://math.now.sh?inline=%5Coverrightarrow%7BF_%7B12%7D%7D%3D-%5Coverrightarrow%7BF_%7B21%7D%7D" style="display:inline-block;margin: 0;"/></li>
+<li>Mass–energy equivalence: <img data-src="https://math.now.sh?inline=E%3Dmc%5E2" style="display:inline-block;margin: 0;"/></li>
+</ul>
+<p>Law of gravity: <img data-src="https://math.now.sh?inline=F%3D%5Cfrac%7BG%20M%20m%7D%7Br%5E%7B2%7D%7D" style="display:inline-block;margin: 0;"/></p>
+<p style=""><img data-src="https://math.now.sh?from=G%20%5Cfrac%7Bm%20M%7D%7B%28r%2Bh%29%5E%7B2%7D%7D%3Dm%20%5Cfrac%7B%5Cnu%5E%7B2%7D%7D%7B(r%2Bh)%7D%0A" /></p><p>Kirchhoff Laws</p>
+<p style=""><img data-src="https://math.now.sh?from=%5Cleft%5B%5Cfrac%7B%5Cpartial%5Cleft%28%5CDelta_%7Br%7D%20H_%7Bm%7D%5Cright%29%7D%7B%5Cpartial%20T%7D%5Cright%5D_%7Bp%7D%3D%5Csum_%7BB%7D%20v_%7BB%7D%20C_%7Bp%2C%20m%7D(B)%0A" /></p><p>Second lawof thermodynamics</p>
+<p style=""><img data-src="https://math.now.sh?from=d%20S%20%5Cgeq%20%5Cfrac%7B%5Cdelta%20Q%7D%7BT%7D%0A" /></p><h2 id="chemistry" id="Chemistry"><a class="header-anchor" href="#Chemistry"></a>Chemistry</h2>
+<p>Ions and precipitation: <img data-src="https://math.now.sh?inline=%5Cce%7BSO4%5E2-%20%2B%20Ba%5E2%2B%20-%3E%20BaSO4%20v%7D" style="display:inline-block;margin: 0;"/></p>
+<p>Ammonia synthesis</p>
+<p style=""><img data-src="https://math.now.sh?from=%5Cce%7BN2%20%2B%203H2%20%3C%3D%3ET%5B%20heat%20%2C%20pressure%5D%5Bcatalyst%5D%202NH3%7D%0A" /></p><p>Equilibrium constant:<img data-src="https://math.now.sh?inline=%5Cmathrm%7BZn%7D%2B2%20%5Cmathrm%7BHCl%7D%28%5Cmathrm%7Baq%7D%29%3D%5Cmathrm%7BH%7D_%7B2%7D%2B%5Cmathrm%7BZnCl%7D_%7B2%7D%20%5Cquad(%5Cmathrm%7Baq%7D)" style="display:inline-block;margin: 0;"/></p>
+<p style=""><img data-src="https://math.now.sh?from=K%5E%7B%5Ctheta%7D%3D%5Cfrac%7B%5Cleft%5Bp%5Cleft%28%5Cmathrm%7BH%7D_%7B2%7D%5Cright%29%20%2F%20p%5E%7B%5Ctheta%7D%5Cright%5D%5Cleft%5Bc%5Cleft(%5Cmathrm%7BZnCl%7D_%7B2%7D%5Cright)%5Cright%5D%7D%7Bc%5E%7B2%7D(%5Cmathrm%7BHC%7D)%7D%0A" /></p><h2 id="biology" id="Biology"><a class="header-anchor" href="#Biology"></a>Biology</h2>
+<p>Photosynthesis</p>
+<p style=""><img data-src="https://math.now.sh?from=%5Cce%7BCO2%20%2B%202H2O%20-%3ET%5BPhotons%5D%5Benzymes%5D%20CH2O%20%2B%20H2O%20%2B%20O2%7D%0A" /></p><hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://github.com/MakerGYT/markdown-it-latex2img">https://github.com/MakerGYT/markdown-it-latex2img</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>latex</tag>
+        <tag>mathjax</tag>
+        <tag>katex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>principle-isfet</title>
+    <url>/2020/07/principle-of-isfet/</url>
+    <content><![CDATA[<h2 id="zi-liao-lai-yuan" id="資料來源"><a class="header-anchor" href="#資料來源"></a>資料來源:</h2>
+<p>江榮隆 教授 中州技術學院電子工程系</p>
+<h2 id="mosfet-ji-ben-yuan-li" id="MOSFET-基本原理"><a class="header-anchor" href="#MOSFET-基本原理"></a>MOSFET 基本原理</h2>
+<ul>
+<li>空乏型MOSFET</li>
+</ul>
+<ol>
+<li>P型基底鑲入兩塊N型區，分別為Source以及Drain</li>
+<li>在這兩極之間以參雜成N型的通道區相連接</li>
+<li>N型通道區的上層覆蓋了一層氧化層(二氧化矽(SiO2))</li>
+<li>閘極(Gate)是用金屬極片蓋在氧化層上面做成</li>
+</ol>
+<h2 id="isfet-ji-ben-yuan-li" id="ISFET基本原理"><a class="header-anchor" href="#ISFET基本原理"></a>ISFET基本原理</h2>
+<a id="more"></a>
+<ul>
+<li>
+<p>由 Bergveld Piet於1970年提出</p>
+<p>他發現將一般MOSFET 的金屬閘極去除後，再將其浸入溶液時，元件之通道電流會隨H+濃度不同而變化，稱其為離子場效電晶體(ISFET)。</p>
+</li>
+<li>
+<p><strong>優勢</strong></p>
+<ul>
+<li>輸入阻抗高</li>
+<li>輸出阻抗低</li>
+<li>響應時間快</li>
+<li>低價位</li>
+<li>適合用於Biosensor</li>
+</ul>
+</li>
+</ul>
+<h3 id="gong-zuo-yuan-li" id="工作原理"><a class="header-anchor" href="#工作原理"></a>工作原理</h3>
+<p>由於pH-ISFET工作時感測膜區域直接浸泡於溶液中。與待測溶液相接觸的感測膜是離子感測元件將化學量轉換成電學量的關鍵。對溶液中離子活度的響應機制是根據吸附鍵結模型(Site-binding model)，電解質與感測膜之介面處會形成界面勢(Surface potential)，該界面勢隨電解質溶液的離子活度而改變，並對ISFET的通道電流起調制作用，進而引起汲源電流的變化，此即為氫離子感測場效應電晶體的基本工作原理。</p>
+<ul>
+<li>pH-ISFET基本公式</li>
+</ul>
+<p style=""><img data-src="https://math.now.sh?from=%20%5Cbegin%7Barray%7D%7Bl%7D%0A%5Cmathrm%7BI%7D_%7B%5Cmathrm%7BDS%7D%7D%3D%5Cmathrm%7Bg%7D_%7B%5Cmathrm%7Bm%7D%7D%5Cleft%5B2%5Cleft%28%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BGS%7D%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D%5Cright%29%20%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D%5E%7B2%7D%5Cright%5D%20%5Cquad%20%20%5C%5C%0A%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D(%5Cmathrm%7BISFET%7D)%3D%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D(%5Cmathrm%7BMOSFET%7D)-%5Cfrac%7B%5CPhi_%7B%5Cmathrm%7BM%7D%7D%7D%7B%5Cmathrm%7Bq%7D%7D%2B%5Cmathrm%7BE%7D_%7B%5Cmathrm%7BRef%7D%7D%2B%5Cchi%5E%7B%5Cmathrm%7BSol%7D%7D-%5Cpsi_%7B0%7D%20%5C%5C%0A%5CPsi_%7B%5Cmathrm%7Bo%7D%7D%3D%5Cmathrm%7BE%7D_%7B%5Cmathrm%7Bo%7D%7D%2B%5Cfrac%7B2.303%20%5Cmathrm%7BRT%7D%7D%7B%5Cmathrm%7BF%7D%7D%20%5Clog%20%5Cmathrm%7Ba%7D_%7B%5Cmathrm%7BH%7D%5E%7B%2B%7D%7D%3D%5Cmathrm%7BE%7D_%7B%5Cmathrm%7Bo%7D%7D-%5Cfrac%7B2.303%20%5Cmathrm%7BRT%7D%7D%7B%5Cmathrm%7BF%7D%7D%20%5Cmathrm%7BpH%7D%20%5C%5C%0A%5Cmathrm%7BI%7D_%7B%5Cmathrm%7BDS%7D%7D%3D%5Cmathrm%7Bg%7D_%7B%5Cmathrm%7Bm%7D%7D%5Cleft%5B2%5Cleft(%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BGS%7D%7D-%5Cfrac%7B2.303%20%5Cmathrm%7BRT%7D%7D%7B%5Cmathrm%7BF%7D%7D%20%5Cmathrm%7BpH%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D%5E%7B*%7D%5Cright)%20%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D%5E%7B2%7D%5Cright%5D%0A%5Cend%7Barray%7D%0A" /></p><ul>
+<li>吸附鍵結模型(Site-binding model)
+<ul>
+<li>Yates提出用於解釋pH-ISFET響應原理</li>
+<li>在感測膜表面存在著羥基(Si-OH, Al-OH, Ta-OH)
+<ul>
+<li>ISFET感測膜的種類
+<ul>
+<li>Ta2O5</li>
+<li>Al3N4</li>
+<li>Si3N4</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在感測膜浸在電解質溶液時，界面處會發生以下化學反應</li>
+</ul>
+</li>
+</ul>
+<p style=""><img data-src="https://math.now.sh?from=%20%5Cbegin%7Barray%7D%7Bl%7D%0AM-O%20H%20%5CLeftrightarrow%20M%20O%5E%7B-%7D%2BH%5E%7B%2B%7D%20%5C%5C%0AM-O%20H%2BH%5E%7B%2B%7D%20%5CLeftrightarrow%20M%20O%20H_%7B2%7D%5E%7B%2B%7D%0A%5Cend%7Barray%7D%0A" /></p><ul>
+<li>總體來說就是藉由感測膜感應出一個表面電位，並藉由導線將表面電位傳至後方MOSFET的閘極端，改變起始電壓(Threshold Voltage,Vth)</li>
+<li>pH值愈高，VT愈大，I-V曲線將往右移動</li>
+</ul>
+<p style=""><img data-src="https://math.now.sh?from=Sensitivity%3D%5Cfrac%7B%7C%E2%96%B3%CF%880%7C%7D%7B%7C%E2%96%B3pH%7C%7D%3D%5Cfrac%7B%7C%E2%96%B3Vthreshold%7C%7D%7B%7C%E2%96%B3pH%7C%7D%3D%5Cfrac%7B%7C%E2%96%B3Vgs%7C%7D%7B%7C%E2%96%B3pH%7C%7D%0A" /></p><p>由上述式子可以得知，感測器的表面電位、元件起始電壓、閘極源極之間的電壓(Vgs)皆會酸鹼度改變。<br>
+很多論文提到的感測度(Sensitivity)指的是Vth隨著pH的變化量而改變，如下圖所示，起始電壓(Vth)會隨著會隨著pH值升高而上升，而根據上面的公式，Ids會變小。</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87219852-63c8ce00-c391-11ea-9159-a25ec532d689.png" alt="Vth versus pH"></p>
+<h3 id="xiang-ying-shi-jian" id="響應時間"><a class="header-anchor" href="#響應時間"></a>響應時間</h3>
+<p>如下圖所示，ISFET得感測度會隨時間變化</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87219949-37618180-c392-11ea-98e0-43de1b2ee0d4.png" alt="drifting"></p>
+<h3 id="liang-ce-xi-tong" id="量測系統"><a class="header-anchor" href="#量測系統"></a>量測系統</h3>
+<ul>
+<li>
+<p>C-V</p>
+<p>目前先不討論C-V量測系統，先著重於I-V量測系統</p>
+</li>
+<li>
+<p>I-V</p>
+<ul>
+<li>IDS-VGS</li>
+</ul>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87220003-f4ec7480-c392-11ea-9875-fd0c7dfcf454.png" alt="Ids versus Vgs"></p>
+<p>下面曲線與X軸交點為Vth由圖可以得知當pH質越大，元件所需的Threshold Voltage就越大，因此VGS也更高</p>
+</li>
+<li>
+<p>IDS-VDS</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87220019-1b121480-c393-11ea-8ac1-cbdebe90ac1f.png" alt="Ids versus Vds"></p>
+</li>
+</ul>
+<h3 id="isfet-de-que-dian" id="ISFET的缺點"><a class="header-anchor" href="#ISFET的缺點"></a>ISFET的缺點</h3>
+<ul>
+<li>
+<p>時漂與遲滯量測系統</p>
+<ul>
+<li>遲滯現象</li>
+</ul>
+<blockquote>
+<p>所謂遲滯，指當溶液之pH 值突然改變後，又再次回至原來的pH值<br>
+時，元件之輸出電壓會與原先pH值未改變前之輸出電壓有所不同，即量測順序為pHx→pHy→pHx→pHz→pHx的情況下，其前後兩次pHx所測量的輸出值不相同，此電壓輸出之差值即為遲滯。</p>
+</blockquote>
+<blockquote>
+<p>H+和OH-離子的大小不同，H+離子擴散的速率高於OH-離子，故於酸性溶液中遲滯量較小，而鹼性溶液中遲滯量較大，造成遲滯曲線的不對稱。</p>
+</blockquote>
+<ul>
+<li>
+<p>溫度效應</p>
+<p>可以分為下列幾種:</p>
+<ul>
+<li>
+<p>參考電極之溫度效<br>
+應</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87220045-409f1e00-c393-11ea-9089-11260b0a9932.png" alt="drfting by temperature"></p>
+</li>
+<li>
+<p>待測液之溫度效應</p>
+</li>
+<li>
+<p>臨界電壓之溫度效應</p>
+</li>
+<li>
+<p>表面電位之溫度效應</p>
+</li>
+</ul>
+</li>
+<li>
+<h2 id="zhao-guang-xiang-ying" id="照光響應"><a class="header-anchor" href="#照光響應"></a>照光響應</h2>
+</li>
+</ul>
+</li>
+<li>
+<p>酸鹼讀出電路與量測系統</p>
+</li>
+</ul>
+<h3 id="performance" id="Performance"><a class="header-anchor" href="#Performance"></a>Performance</h3>
+<ul>
+<li>
+<p>Stability and reproducibility</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87220072-86f47d00-c393-11ea-933c-aeceb9266b7a.png" alt="stability"></p>
+</li>
+<li>
+<p>Response time ®</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87220075-8d82f480-c393-11ea-9879-4464ce47690d.png" alt="response time"></p>
+</li>
+<li>
+<p>Drifting effect</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87220076-9247a880-c393-11ea-9950-c007651e652b.png" alt="Vgs versus time"></p>
+</li>
+</ul>
+<h2 id="dual-gate-isfet" id="Dual-Gate-ISFET"><a class="header-anchor" href="#Dual-Gate-ISFET"></a>Dual Gate ISFET</h2>
+<p><strong>2015 IEEE</strong><br>
+<a href="https://ieeexplore.ieee.org/document/7409792" title="Title">High performance dual-gate ISFET with non-ideal effect reduction schemes in a SOI-CMOS bioelectrical SoC</a>.<br>
+This device possesses two gates:</p>
+<ul>
+<li>
+<p><strong>Fluidic gate (FG)</strong>: Biased via a reference electrode in solution.</p>
+</li>
+<li>
+<p><strong>Standard polysilicon gate (PG)</strong> : Standard gate of MOSFET.</p>
+</li>
+</ul>
+<blockquote>
+<p>DGFET can be approximately modeled as two FETs connected in parallel.</p>
+</blockquote>
+<h3 id="operation-mode" id="Operation-mode"><a class="header-anchor" href="#Operation-mode"></a>Operation mode</h3>
+<ul>
+<li>
+<p>single-gate (SG) operation</p>
+<ul>
+<li>
+<p>Only fluidic gate transistor is turned on to generate pH dependent<br>
+current with a <strong>constant drain-to-source voltage</strong> <strong>(VDS = 0.2 V).</strong></p>
+</li>
+<li>
+<p>Vpg is set <strong>0V</strong> and Vfg is sweeping through <strong>0 to 2V</strong></p>
+  <img width="382" alt="Vfg sweeping" data-src="https://user-images.githubusercontent.com/67454551/87668247-5e5af180-c79e-11ea-99c9-d3462adf2663.png">
+</li>
+</ul>
+</li>
+<li>
+<p>PG mode</p>
+<ul>
+<li>
+<p>Vpg is set <strong>0.5 V</strong> and Vpg is sweeping through <strong>-0.2 to 1.5 V</strong></p>
+</li>
+<li>
+<p>Optimal Vpg=0.5V (less drifting) when Vfg is set grounded.</p>
+  <img width="378" alt="Vfg sweeping" data-src="https://user-images.githubusercontent.com/67454551/87669011-ca8a2500-c79f-11ea-9493-4c244fece83d.png">
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="sensitivity" id="Sensitivity"><a class="header-anchor" href="#Sensitivity"></a>Sensitivity</h3>
+<ul>
+<li>According to the <strong>VTH difference derived from the IDS-VFG<br>
+data</strong>, this device has a near-Nernst pH sensitivity of 53.3 mV/pH with linearity of $$<br>
+R^{2} = 0.994.</li>
+</ul>
+<p style=""><img data-src="https://math.now.sh?from=%0A%23%23%20Shortage%20of%20ISFET%0A%0A-%20Time%20drift%0A-%20Hysteresis%20effect%0A-%20Severe%20flicker%20noise%20%5B%281%29%5D(https%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0925400509007059)%0A%0A%23%23%20Different%20Structure%20of%20ISFET%0A%0A%0A%23%23%23%20Extended-gate%0A%0A-%20Half%20of%20**transconductance%20efficiency%20(gm%2FID)%20due%20to%20capacitive%20division**%0A-%20threshold%20voltage%20(VTH)%20mismatch%20due%20to%20trapped%20charges%20on%20the%20sensing%20membrane%0A%0A%0A%0A%23%23%23%20Sensitivity%0A%0A-%20According%20to%20the%20**VTH%20difference%20derived%20from%20the%20IDS-VFG%0Adata**%2C%20this%20device%20has%20a%20near-Nernst%20pH%20sensitivity%20of%2053.3%0AmV%2FpH%20with%20linearity%20of%20R%5E2%20%3D%200.994.%0A%0A%0A%23%23%23%20Advantage%0A-" /></p>]]></content>
+      <tags>
+        <tag>device</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Academic writing</title>
+    <url>/2020/12/writing/</url>
+    <content><![CDATA[<p>Lecturer: Miguel Lee, NTU Writing Center</p>
+<a id="more"></a>
+<h2 id="abstract" id="Abstract"><a class="header-anchor" href="#Abstract"></a>Abstract</h2>
+<h3 id="structure" id="Structure"><a class="header-anchor" href="#Structure"></a>Structure:</h3>
+<ul>
+<li>Descriptive:<br>
+Purpose/methods/objectiive scope of the work, probably without results.</li>
+<li>Imformative (Most of journal paper)<br>
+Surrogate for the research paper.<br>
+Imformative abstract formats can be separated <strong>Structured</strong> / <strong>Unstructured</strong>.
+<ul>
+<li>Structured<br>
+Bullet points and defined section, mostly used in medical fields.</li>
+<li>Unstructured
+<ul>
+<li><strong>Result-driven</strong>: Concentrates on the research findings. (有前瞻性或&quot;革命性&quot;的發現)</li>
+<li>Research paper <strong>Summary-driven</strong>:Provides 1~2 sentences synopses of each <strong>IMRD</strong> sections.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="rp-driven" id="RP-driven"><a class="header-anchor" href="#RP-driven"></a>RP-driven</h3>
+<ul>
+<li>Structure
+<ul>
+<li>Background
+<ul>
+<li>General truth about the topic
+<ul>
+<li>current status/<strong>definitions</strong> (Present tense to state a common fact.)<br>
+refers to , is</li>
+<li>current problems/gap<br>
+(Present perfact to imply numbers of work)<br>
+has been, litte</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Methods</li>
+<li>Results</li>
+<li>Discussions</li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction" id="Introduction"><a class="header-anchor" href="#Introduction"></a>Introduction</h2>
+<h3 id="structure-1" id="Structure-v2"><a class="header-anchor" href="#Structure-v2"></a>Structure</h3>
+<ul>
+<li>Move 1: Establish a territory
+<ul>
+<li>Step 1:Making a centrality claim
+<ul>
+<li>Emphasize the importance of researches.</li>
+</ul>
+</li>
+<li>Step 2:Making topic generalisations
+<ul>
+<li>Centrally state the situation, development…</li>
+</ul>
+</li>
+<li>Step 3:Reviewing items or previous researches
+<ul>
+<li>Emphasize how your researches comtribute to the research field.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Move 2: Establish a niche
+<ul>
+<li>
+<p>Step 1A: Counter-claimming</p>
+</li>
+<li>
+<p>Step 1B: Indicating a <strong>Gap</strong> (In pre)</p>
+</li>
+</ul>
+</li>
+<li>Occupying a niche</li>
+</ul>
+<h3 id="tense" id="Tense"><a class="header-anchor" href="#Tense"></a>Tense</h3>
+]]></content>
+  </entry>
+  <entry>
+    <title>About</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<h2 id="about-me" id="About-Me"><a class="header-anchor" href="#About-Me"></a>About Me</h2>
+<p>Master student in bioelectronics.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+</search>

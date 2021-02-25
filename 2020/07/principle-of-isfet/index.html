@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"betahcy.github.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"prism":false,"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="資料來源: 江榮隆 教授 中州技術學院電子工程系 MOSFET 基本原理  空乏型MOSFET   P型基底鑲入兩塊N型區，分別為Source以及Drain 在這兩極之間以參雜成N型的通道區相連接 N型通道區的上層覆蓋了一層氧化層(二氧化矽(SiO2)) 閘極(Gate)是用金屬極片蓋在氧化層上面做成  ISFET基本原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="principle-isfet">
+<meta property="og:url" content="https://betahcy.github.io/2020/07/principle-of-isfet/">
+<meta property="og:site_name" content="Emily">
+<meta property="og:description" content="資料來源: 江榮隆 教授 中州技術學院電子工程系 MOSFET 基本原理  空乏型MOSFET   P型基底鑲入兩塊N型區，分別為Source以及Drain 在這兩極之間以參雜成N型的通道區相連接 N型通道區的上層覆蓋了一層氧化層(二氧化矽(SiO2)) 閘極(Gate)是用金屬極片蓋在氧化層上面做成  ISFET基本原理">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://math.now.sh?from=%20%5Cbegin%7Barray%7D%7Bl%7D%0A%5Cmathrm%7BI%7D_%7B%5Cmathrm%7BDS%7D%7D%3D%5Cmathrm%7Bg%7D_%7B%5Cmathrm%7Bm%7D%7D%5Cleft%5B2%5Cleft%28%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BGS%7D%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D%5Cright%29%20%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D%5E%7B2%7D%5Cright%5D%20%5Cquad%20%20%5C%5C%0A%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D(%5Cmathrm%7BISFET%7D)%3D%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D(%5Cmathrm%7BMOSFET%7D)-%5Cfrac%7B%5CPhi_%7B%5Cmathrm%7BM%7D%7D%7D%7B%5Cmathrm%7Bq%7D%7D%2B%5Cmathrm%7BE%7D_%7B%5Cmathrm%7BRef%7D%7D%2B%5Cchi%5E%7B%5Cmathrm%7BSol%7D%7D-%5Cpsi_%7B0%7D%20%5C%5C%0A%5CPsi_%7B%5Cmathrm%7Bo%7D%7D%3D%5Cmathrm%7BE%7D_%7B%5Cmathrm%7Bo%7D%7D%2B%5Cfrac%7B2.303%20%5Cmathrm%7BRT%7D%7D%7B%5Cmathrm%7BF%7D%7D%20%5Clog%20%5Cmathrm%7Ba%7D_%7B%5Cmathrm%7BH%7D%5E%7B%2B%7D%7D%3D%5Cmathrm%7BE%7D_%7B%5Cmathrm%7Bo%7D%7D-%5Cfrac%7B2.303%20%5Cmathrm%7BRT%7D%7D%7B%5Cmathrm%7BF%7D%7D%20%5Cmathrm%7BpH%7D%20%5C%5C%0A%5Cmathrm%7BI%7D_%7B%5Cmathrm%7BDS%7D%7D%3D%5Cmathrm%7Bg%7D_%7B%5Cmathrm%7Bm%7D%7D%5Cleft%5B2%5Cleft(%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BGS%7D%7D-%5Cfrac%7B2.303%20%5Cmathrm%7BRT%7D%7D%7B%5Cmathrm%7BF%7D%7D%20%5Cmathrm%7BpH%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D%5E%7B*%7D%5Cright)%20%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D%5E%7B2%7D%5Cright%5D%0A%5Cend%7Barray%7D%0A">
+<meta property="og:image" content="https://math.now.sh?from=%20%5Cbegin%7Barray%7D%7Bl%7D%0AM-O%20H%20%5CLeftrightarrow%20M%20O%5E%7B-%7D%2BH%5E%7B%2B%7D%20%5C%5C%0AM-O%20H%2BH%5E%7B%2B%7D%20%5CLeftrightarrow%20M%20O%20H_%7B2%7D%5E%7B%2B%7D%0A%5Cend%7Barray%7D%0A">
+<meta property="og:image" content="https://math.now.sh?from=Sensitivity%3D%5Cfrac%7B%7C%E2%96%B3%CF%880%7C%7D%7B%7C%E2%96%B3pH%7C%7D%3D%5Cfrac%7B%7C%E2%96%B3Vthreshold%7C%7D%7B%7C%E2%96%B3pH%7C%7D%3D%5Cfrac%7B%7C%E2%96%B3Vgs%7C%7D%7B%7C%E2%96%B3pH%7C%7D%0A">
+<meta property="og:image" content="https://user-images.githubusercontent.com/67454551/87219852-63c8ce00-c391-11ea-9159-a25ec532d689.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/67454551/87219949-37618180-c392-11ea-98e0-43de1b2ee0d4.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/67454551/87220003-f4ec7480-c392-11ea-9875-fd0c7dfcf454.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/67454551/87220019-1b121480-c393-11ea-8ac1-cbdebe90ac1f.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/67454551/87220045-409f1e00-c393-11ea-9089-11260b0a9932.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/67454551/87220072-86f47d00-c393-11ea-933c-aeceb9266b7a.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/67454551/87220075-8d82f480-c393-11ea-9879-4464ce47690d.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/67454551/87220076-9247a880-c393-11ea-9950-c007651e652b.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/67454551/87668247-5e5af180-c79e-11ea-99c9-d3462adf2663.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/67454551/87669011-ca8a2500-c79f-11ea-9493-4c244fece83d.png">
+<meta property="og:image" content="https://math.now.sh?from=%0A%23%23%20Shortage%20of%20ISFET%0A%0A-%20Time%20drift%0A-%20Hysteresis%20effect%0A-%20Severe%20flicker%20noise%20%5B%281%29%5D(https%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0925400509007059)%0A%0A%23%23%20Different%20Structure%20of%20ISFET%0A%0A%0A%23%23%23%20Extended-gate%0A%0A-%20Half%20of%20**transconductance%20efficiency%20(gm%2FID)%20due%20to%20capacitive%20division**%0A-%20threshold%20voltage%20(VTH)%20mismatch%20due%20to%20trapped%20charges%20on%20the%20sensing%20membrane%0A%0A%0A%0A%23%23%23%20Sensitivity%0A%0A-%20According%20to%20the%20**VTH%20difference%20derived%20from%20the%20IDS-VFG%0Adata**%2C%20this%20device%20has%20a%20near-Nernst%20pH%20sensitivity%20of%2053.3%0AmV%2FpH%20with%20linearity%20of%20R%5E2%20%3D%200.994.%0A%0A%0A%23%23%23%20Advantage%0A-">
+<meta property="article:published_time" content="2020-07-11T15:40:48.000Z">
+<meta property="article:modified_time" content="2021-02-25T08:25:15.213Z">
+<meta property="article:author" content="Emily">
+<meta property="article:tag" content="device">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://math.now.sh?from=%20%5Cbegin%7Barray%7D%7Bl%7D%0A%5Cmathrm%7BI%7D_%7B%5Cmathrm%7BDS%7D%7D%3D%5Cmathrm%7Bg%7D_%7B%5Cmathrm%7Bm%7D%7D%5Cleft%5B2%5Cleft%28%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BGS%7D%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D%5Cright%29%20%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D%5E%7B2%7D%5Cright%5D%20%5Cquad%20%20%5C%5C%0A%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D(%5Cmathrm%7BISFET%7D)%3D%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D(%5Cmathrm%7BMOSFET%7D)-%5Cfrac%7B%5CPhi_%7B%5Cmathrm%7BM%7D%7D%7D%7B%5Cmathrm%7Bq%7D%7D%2B%5Cmathrm%7BE%7D_%7B%5Cmathrm%7BRef%7D%7D%2B%5Cchi%5E%7B%5Cmathrm%7BSol%7D%7D-%5Cpsi_%7B0%7D%20%5C%5C%0A%5CPsi_%7B%5Cmathrm%7Bo%7D%7D%3D%5Cmathrm%7BE%7D_%7B%5Cmathrm%7Bo%7D%7D%2B%5Cfrac%7B2.303%20%5Cmathrm%7BRT%7D%7D%7B%5Cmathrm%7BF%7D%7D%20%5Clog%20%5Cmathrm%7Ba%7D_%7B%5Cmathrm%7BH%7D%5E%7B%2B%7D%7D%3D%5Cmathrm%7BE%7D_%7B%5Cmathrm%7Bo%7D%7D-%5Cfrac%7B2.303%20%5Cmathrm%7BRT%7D%7D%7B%5Cmathrm%7BF%7D%7D%20%5Cmathrm%7BpH%7D%20%5C%5C%0A%5Cmathrm%7BI%7D_%7B%5Cmathrm%7BDS%7D%7D%3D%5Cmathrm%7Bg%7D_%7B%5Cmathrm%7Bm%7D%7D%5Cleft%5B2%5Cleft(%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BGS%7D%7D-%5Cfrac%7B2.303%20%5Cmathrm%7BRT%7D%7D%7B%5Cmathrm%7BF%7D%7D%20%5Cmathrm%7BpH%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D%5E%7B*%7D%5Cright)%20%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D%5E%7B2%7D%5Cright%5D%0A%5Cend%7Barray%7D%0A">
+
+<link rel="canonical" href="https://betahcy.github.io/2020/07/principle-of-isfet/">
+
+
+<script data-pjax id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>principle-isfet | Emily</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Emily</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Site subtitle</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#zi-liao-lai-yuan"><span class="nav-number">1.</span> <span class="nav-text">資料來源:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mosfet-ji-ben-yuan-li"><span class="nav-number">2.</span> <span class="nav-text">MOSFET 基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#isfet-ji-ben-yuan-li"><span class="nav-number">3.</span> <span class="nav-text">ISFET基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gong-zuo-yuan-li"><span class="nav-number">3.1.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xiang-ying-shi-jian"><span class="nav-number">3.2.</span> <span class="nav-text">響應時間</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#liang-ce-xi-tong"><span class="nav-number">3.3.</span> <span class="nav-text">量測系統</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isfet-de-que-dian"><span class="nav-number">3.4.</span> <span class="nav-text">ISFET的缺點</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zhao-guang-xiang-ying"><span class="nav-number">4.</span> <span class="nav-text">照光響應</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#performance"><span class="nav-number">4.1.</span> <span class="nav-text">Performance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dual-gate-isfet"><span class="nav-number">5.</span> <span class="nav-text">Dual Gate ISFET</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#operation-mode"><span class="nav-number">5.1.</span> <span class="nav-text">Operation mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sensitivity"><span class="nav-number">5.2.</span> <span class="nav-text">Sensitivity</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Emily"
+      src="https://user-images.githubusercontent.com/67454551/87241307-693b1c80-c454-11ea-892d-1b922b02ac7a.png">
+  <p class="site-author-name" itemprop="name">Emily</p>
+  <div class="site-description" itemprop="description">Site description</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/betahcy" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;betahcy" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:betahcy@gmail.com" title="E-Mail → mailto:betahcy@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/betahcy" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;betahcy" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </section>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/betahcy" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://betahcy.github.io/2020/07/principle-of-isfet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://user-images.githubusercontent.com/67454551/87241307-693b1c80-c454-11ea-892d-1b922b02ac7a.png">
+      <meta itemprop="name" content="Emily">
+      <meta itemprop="description" content="Site description">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Emily">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          principle-isfet<a href="https://github.com/betahcy/betahcy.github.io/blob/source/source/_posts/principle-of-isfet.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-11 15:40:48" itemprop="dateCreated datePublished" datetime="2020-07-11T15:40:48+00:00">2020-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-25 08:25:15" itemprop="dateModified" datetime="2021-02-25T08:25:15+00:00">2021-02-25</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="zi-liao-lai-yuan" id="資料來源"><a class="header-anchor" href="#資料來源"></a>資料來源:</h2>
+<p>江榮隆 教授 中州技術學院電子工程系</p>
+<h2 id="mosfet-ji-ben-yuan-li" id="MOSFET-基本原理"><a class="header-anchor" href="#MOSFET-基本原理"></a>MOSFET 基本原理</h2>
+<ul>
+<li>空乏型MOSFET</li>
+</ul>
+<ol>
+<li>P型基底鑲入兩塊N型區，分別為Source以及Drain</li>
+<li>在這兩極之間以參雜成N型的通道區相連接</li>
+<li>N型通道區的上層覆蓋了一層氧化層(二氧化矽(SiO2))</li>
+<li>閘極(Gate)是用金屬極片蓋在氧化層上面做成</li>
+</ol>
+<h2 id="isfet-ji-ben-yuan-li" id="ISFET基本原理"><a class="header-anchor" href="#ISFET基本原理"></a>ISFET基本原理</h2>
+<a id="more"></a>
+<ul>
+<li>
+<p>由 Bergveld Piet於1970年提出</p>
+<p>他發現將一般MOSFET 的金屬閘極去除後，再將其浸入溶液時，元件之通道電流會隨H+濃度不同而變化，稱其為離子場效電晶體(ISFET)。</p>
+</li>
+<li>
+<p><strong>優勢</strong></p>
+<ul>
+<li>輸入阻抗高</li>
+<li>輸出阻抗低</li>
+<li>響應時間快</li>
+<li>低價位</li>
+<li>適合用於Biosensor</li>
+</ul>
+</li>
+</ul>
+<h3 id="gong-zuo-yuan-li" id="工作原理"><a class="header-anchor" href="#工作原理"></a>工作原理</h3>
+<p>由於pH-ISFET工作時感測膜區域直接浸泡於溶液中。與待測溶液相接觸的感測膜是離子感測元件將化學量轉換成電學量的關鍵。對溶液中離子活度的響應機制是根據吸附鍵結模型(Site-binding model)，電解質與感測膜之介面處會形成界面勢(Surface potential)，該界面勢隨電解質溶液的離子活度而改變，並對ISFET的通道電流起調制作用，進而引起汲源電流的變化，此即為氫離子感測場效應電晶體的基本工作原理。</p>
+<ul>
+<li>pH-ISFET基本公式</li>
+</ul>
+<p style=""><img data-src="https://math.now.sh?from=%20%5Cbegin%7Barray%7D%7Bl%7D%0A%5Cmathrm%7BI%7D_%7B%5Cmathrm%7BDS%7D%7D%3D%5Cmathrm%7Bg%7D_%7B%5Cmathrm%7Bm%7D%7D%5Cleft%5B2%5Cleft%28%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BGS%7D%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D%5Cright%29%20%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D%5E%7B2%7D%5Cright%5D%20%5Cquad%20%20%5C%5C%0A%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D(%5Cmathrm%7BISFET%7D)%3D%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D(%5Cmathrm%7BMOSFET%7D)-%5Cfrac%7B%5CPhi_%7B%5Cmathrm%7BM%7D%7D%7D%7B%5Cmathrm%7Bq%7D%7D%2B%5Cmathrm%7BE%7D_%7B%5Cmathrm%7BRef%7D%7D%2B%5Cchi%5E%7B%5Cmathrm%7BSol%7D%7D-%5Cpsi_%7B0%7D%20%5C%5C%0A%5CPsi_%7B%5Cmathrm%7Bo%7D%7D%3D%5Cmathrm%7BE%7D_%7B%5Cmathrm%7Bo%7D%7D%2B%5Cfrac%7B2.303%20%5Cmathrm%7BRT%7D%7D%7B%5Cmathrm%7BF%7D%7D%20%5Clog%20%5Cmathrm%7Ba%7D_%7B%5Cmathrm%7BH%7D%5E%7B%2B%7D%7D%3D%5Cmathrm%7BE%7D_%7B%5Cmathrm%7Bo%7D%7D-%5Cfrac%7B2.303%20%5Cmathrm%7BRT%7D%7D%7B%5Cmathrm%7BF%7D%7D%20%5Cmathrm%7BpH%7D%20%5C%5C%0A%5Cmathrm%7BI%7D_%7B%5Cmathrm%7BDS%7D%7D%3D%5Cmathrm%7Bg%7D_%7B%5Cmathrm%7Bm%7D%7D%5Cleft%5B2%5Cleft(%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BGS%7D%7D-%5Cfrac%7B2.303%20%5Cmathrm%7BRT%7D%7D%7B%5Cmathrm%7BF%7D%7D%20%5Cmathrm%7BpH%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BT%7D%7D%5E%7B*%7D%5Cright)%20%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D-%5Cmathrm%7BV%7D_%7B%5Cmathrm%7BDS%7D%7D%5E%7B2%7D%5Cright%5D%0A%5Cend%7Barray%7D%0A" /></p><ul>
+<li>吸附鍵結模型(Site-binding model)
+<ul>
+<li>Yates提出用於解釋pH-ISFET響應原理</li>
+<li>在感測膜表面存在著羥基(Si-OH, Al-OH, Ta-OH)
+<ul>
+<li>ISFET感測膜的種類
+<ul>
+<li>Ta2O5</li>
+<li>Al3N4</li>
+<li>Si3N4</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在感測膜浸在電解質溶液時，界面處會發生以下化學反應</li>
+</ul>
+</li>
+</ul>
+<p style=""><img data-src="https://math.now.sh?from=%20%5Cbegin%7Barray%7D%7Bl%7D%0AM-O%20H%20%5CLeftrightarrow%20M%20O%5E%7B-%7D%2BH%5E%7B%2B%7D%20%5C%5C%0AM-O%20H%2BH%5E%7B%2B%7D%20%5CLeftrightarrow%20M%20O%20H_%7B2%7D%5E%7B%2B%7D%0A%5Cend%7Barray%7D%0A" /></p><ul>
+<li>總體來說就是藉由感測膜感應出一個表面電位，並藉由導線將表面電位傳至後方MOSFET的閘極端，改變起始電壓(Threshold Voltage,Vth)</li>
+<li>pH值愈高，VT愈大，I-V曲線將往右移動</li>
+</ul>
+<p style=""><img data-src="https://math.now.sh?from=Sensitivity%3D%5Cfrac%7B%7C%E2%96%B3%CF%880%7C%7D%7B%7C%E2%96%B3pH%7C%7D%3D%5Cfrac%7B%7C%E2%96%B3Vthreshold%7C%7D%7B%7C%E2%96%B3pH%7C%7D%3D%5Cfrac%7B%7C%E2%96%B3Vgs%7C%7D%7B%7C%E2%96%B3pH%7C%7D%0A" /></p><p>由上述式子可以得知，感測器的表面電位、元件起始電壓、閘極源極之間的電壓(Vgs)皆會酸鹼度改變。<br>
+很多論文提到的感測度(Sensitivity)指的是Vth隨著pH的變化量而改變，如下圖所示，起始電壓(Vth)會隨著會隨著pH值升高而上升，而根據上面的公式，Ids會變小。</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87219852-63c8ce00-c391-11ea-9159-a25ec532d689.png" alt="Vth versus pH"></p>
+<h3 id="xiang-ying-shi-jian" id="響應時間"><a class="header-anchor" href="#響應時間"></a>響應時間</h3>
+<p>如下圖所示，ISFET得感測度會隨時間變化</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87219949-37618180-c392-11ea-98e0-43de1b2ee0d4.png" alt="drifting"></p>
+<h3 id="liang-ce-xi-tong" id="量測系統"><a class="header-anchor" href="#量測系統"></a>量測系統</h3>
+<ul>
+<li>
+<p>C-V</p>
+<p>目前先不討論C-V量測系統，先著重於I-V量測系統</p>
+</li>
+<li>
+<p>I-V</p>
+<ul>
+<li>IDS-VGS</li>
+</ul>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87220003-f4ec7480-c392-11ea-9875-fd0c7dfcf454.png" alt="Ids versus Vgs"></p>
+<p>下面曲線與X軸交點為Vth由圖可以得知當pH質越大，元件所需的Threshold Voltage就越大，因此VGS也更高</p>
+</li>
+<li>
+<p>IDS-VDS</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87220019-1b121480-c393-11ea-8ac1-cbdebe90ac1f.png" alt="Ids versus Vds"></p>
+</li>
+</ul>
+<h3 id="isfet-de-que-dian" id="ISFET的缺點"><a class="header-anchor" href="#ISFET的缺點"></a>ISFET的缺點</h3>
+<ul>
+<li>
+<p>時漂與遲滯量測系統</p>
+<ul>
+<li>遲滯現象</li>
+</ul>
+<blockquote>
+<p>所謂遲滯，指當溶液之pH 值突然改變後，又再次回至原來的pH值<br>
+時，元件之輸出電壓會與原先pH值未改變前之輸出電壓有所不同，即量測順序為pHx→pHy→pHx→pHz→pHx的情況下，其前後兩次pHx所測量的輸出值不相同，此電壓輸出之差值即為遲滯。</p>
+</blockquote>
+<blockquote>
+<p>H+和OH-離子的大小不同，H+離子擴散的速率高於OH-離子，故於酸性溶液中遲滯量較小，而鹼性溶液中遲滯量較大，造成遲滯曲線的不對稱。</p>
+</blockquote>
+<ul>
+<li>
+<p>溫度效應</p>
+<p>可以分為下列幾種:</p>
+<ul>
+<li>
+<p>參考電極之溫度效<br>
+應</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87220045-409f1e00-c393-11ea-9089-11260b0a9932.png" alt="drfting by temperature"></p>
+</li>
+<li>
+<p>待測液之溫度效應</p>
+</li>
+<li>
+<p>臨界電壓之溫度效應</p>
+</li>
+<li>
+<p>表面電位之溫度效應</p>
+</li>
+</ul>
+</li>
+<li>
+<h2 id="zhao-guang-xiang-ying" id="照光響應"><a class="header-anchor" href="#照光響應"></a>照光響應</h2>
+</li>
+</ul>
+</li>
+<li>
+<p>酸鹼讀出電路與量測系統</p>
+</li>
+</ul>
+<h3 id="performance" id="Performance"><a class="header-anchor" href="#Performance"></a>Performance</h3>
+<ul>
+<li>
+<p>Stability and reproducibility</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87220072-86f47d00-c393-11ea-933c-aeceb9266b7a.png" alt="stability"></p>
+</li>
+<li>
+<p>Response time ®</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87220075-8d82f480-c393-11ea-9879-4464ce47690d.png" alt="response time"></p>
+</li>
+<li>
+<p>Drifting effect</p>
+<p><img data-src="https://user-images.githubusercontent.com/67454551/87220076-9247a880-c393-11ea-9950-c007651e652b.png" alt="Vgs versus time"></p>
+</li>
+</ul>
+<h2 id="dual-gate-isfet" id="Dual-Gate-ISFET"><a class="header-anchor" href="#Dual-Gate-ISFET"></a>Dual Gate ISFET</h2>
+<p><strong>2015 IEEE</strong><br>
+<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/7409792" title="Title">High performance dual-gate ISFET with non-ideal effect reduction schemes in a SOI-CMOS bioelectrical SoC</a>.<br>
+This device possesses two gates:</p>
+<ul>
+<li>
+<p><strong>Fluidic gate (FG)</strong>: Biased via a reference electrode in solution.</p>
+</li>
+<li>
+<p><strong>Standard polysilicon gate (PG)</strong> : Standard gate of MOSFET.</p>
+</li>
+</ul>
+<blockquote>
+<p>DGFET can be approximately modeled as two FETs connected in parallel.</p>
+</blockquote>
+<h3 id="operation-mode" id="Operation-mode"><a class="header-anchor" href="#Operation-mode"></a>Operation mode</h3>
+<ul>
+<li>
+<p>single-gate (SG) operation</p>
+<ul>
+<li>
+<p>Only fluidic gate transistor is turned on to generate pH dependent<br>
+current with a <strong>constant drain-to-source voltage</strong> <strong>(VDS = 0.2 V).</strong></p>
+</li>
+<li>
+<p>Vpg is set <strong>0V</strong> and Vfg is sweeping through <strong>0 to 2V</strong></p>
+  <img width="382" alt="Vfg sweeping" data-src="https://user-images.githubusercontent.com/67454551/87668247-5e5af180-c79e-11ea-99c9-d3462adf2663.png">
+</li>
+</ul>
+</li>
+<li>
+<p>PG mode</p>
+<ul>
+<li>
+<p>Vpg is set <strong>0.5 V</strong> and Vpg is sweeping through <strong>-0.2 to 1.5 V</strong></p>
+</li>
+<li>
+<p>Optimal Vpg=0.5V (less drifting) when Vfg is set grounded.</p>
+  <img width="378" alt="Vfg sweeping" data-src="https://user-images.githubusercontent.com/67454551/87669011-ca8a2500-c79f-11ea-9493-4c244fece83d.png">
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="sensitivity" id="Sensitivity"><a class="header-anchor" href="#Sensitivity"></a>Sensitivity</h3>
+<ul>
+<li>According to the <strong>VTH difference derived from the IDS-VFG<br>
+data</strong>, this device has a near-Nernst pH sensitivity of 53.3 mV/pH with linearity of $$<br>
+R^{2} = 0.994.</li>
+</ul>
+<p style=""><img data-src="https://math.now.sh?from=%0A%23%23%20Shortage%20of%20ISFET%0A%0A-%20Time%20drift%0A-%20Hysteresis%20effect%0A-%20Severe%20flicker%20noise%20%5B%281%29%5D(https%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0925400509007059)%0A%0A%23%23%20Different%20Structure%20of%20ISFET%0A%0A%0A%23%23%23%20Extended-gate%0A%0A-%20Half%20of%20**transconductance%20efficiency%20(gm%2FID)%20due%20to%20capacitive%20division**%0A-%20threshold%20voltage%20(VTH)%20mismatch%20due%20to%20trapped%20charges%20on%20the%20sensing%20membrane%0A%0A%0A%0A%23%23%23%20Sensitivity%0A%0A-%20According%20to%20the%20**VTH%20difference%20derived%20from%20the%20IDS-VFG%0Adata**%2C%20this%20device%20has%20a%20near-Nernst%20pH%20sensitivity%20of%2053.3%0AmV%2FpH%20with%20linearity%20of%20R%5E2%20%3D%200.994.%0A%0A%0A%23%23%23%20Advantage%0A-" /></p>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/device/" rel="tag"><i class="fa fa-tag"></i> device</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/md-math/" rel="prev" title="MathJax rendering">
+      <i class="fa fa-chevron-left"></i> MathJax rendering
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/ISE-and-basic-potentiometry/" rel="next" title="ISE">
+      ISE <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-poo"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Emily</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">5k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">4 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/next-theme/pjax@0/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], #pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  if (hasTOC) {
+    document.querySelector('.sidebar-nav-toc').click();
+  } else {
+    document.querySelector('.sidebar-nav-overview').click();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
