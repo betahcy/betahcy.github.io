@@ -23,7 +23,7 @@ jobs:
     
     # Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)
     - name: Cache Dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3.0.1
       with:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
