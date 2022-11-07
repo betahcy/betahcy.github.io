@@ -23,7 +23,7 @@
     "hexo-renderer-markdown-it": "^5.0.0",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^2.0.0",
-    "hexo-word-counter": "0.0.2",
+    "hexo-word-counter": "0.1.0",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-container": "^3.0.0",
     "markdown-it-deflist": "^2.1.0",
